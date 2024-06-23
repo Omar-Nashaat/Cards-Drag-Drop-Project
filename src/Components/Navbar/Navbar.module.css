@@ -1,0 +1,30 @@
+.navBarBack {
+    background-color: #110D2E;
+    font-family: "Mulish", sans-serif;
+}
+
+.logoEdit {
+    height: 50px;
+}
+
+.searchContainer {
+    position: relative;
+    margin-left: 15px;
+}
+
+.searchInput {
+    border-radius: 20px;
+    padding: 5px 15px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: white;
+    padding-right: 30px;
+}
+
+.searchContainer i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
