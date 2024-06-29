@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDrop } from 'react-dnd';
 import DraggableCard from '../DraggableCard/DraggableCard';
 import style from '../Home/home.module.css';
@@ -18,22 +19,40 @@ function DroppableSlot({ slotType, onDrop, onRemove, cards }) {
 
   return (
     <div ref={drop} className={`${style.slotStyle} ${isOver ? style.slotHover : ''}`}>
-      <i className="fa-regular fa-image fs-1 mb-3"></i>
-      <h6>Drag Here</h6>
-      <div className="d-flex flex-wrap">
+      {!cards.length && (
+        <>
+          <i className="fa-regular fa-image fs-1 mb-3"></i>
+          <h6>Drag Here</h6>
+        </>
+      )}
+      <div className="row">
         {cards.map((card) => (
-          <div key={card.id} className={`${style.cardWrapper} m-2`}>
+          <div className="col-md-6 mb-4">
             <DraggableCard id={card.id} originalSlot={slotType}>
               <span>{card.name}</span>
+              <div>
+                <button className="btn btn-danger btn-sm mt-2" onClick={() => onRemove(card.id, slotType)}>
+                  Remove
+                </button>
+              </div>
             </DraggableCard>
-            <button className="btn btn-danger btn-sm mt-2" onClick={() => onRemove(card.id, slotType)}>
-              Remove
-            </button>
           </div>
         ))}
       </div>
     </div>
   );
 }
+
+DroppableSlot.propTypes = {
+  slotType: PropTypes.string.isRequired,
+  onDrop: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default DroppableSlot;

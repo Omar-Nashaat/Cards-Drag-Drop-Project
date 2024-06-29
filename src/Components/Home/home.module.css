@@ -1,4 +1,4 @@
-.allHome {
+/* .allHome {
     font-family: "Mulish", sans-serif;
     background-color: #211036;
 }
@@ -80,33 +80,230 @@
     transition: 0.3s ease-in-out;
 }
 
+.cardDiv {
+    overflow: hidden;
+}
+
+
+
 .cardDiv:hover .hidden {
     visibility: hidden;
 }
 
 
-.cardWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.cardName {
+    position: relative;
+}
+
+.dragged {
+    text-decoration: line-through;
+    color: red;
+}
+
+.draggedText {
+    color: red;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+.draggedCard {
+    border: 1px solid red;
+} */
+
+
+/* .allHome {
+    font-family: "Mulish", sans-serif;
+    background-color: #211036;
+}
+
+.firstSection {
+    background-color: #211036;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-family: "Inter", sans-serif;
+}
+
+.slotsDiv {
+    background-color: #211036;
+    color: white;
+    padding: 30px;
+}
+
+.slotStyle {
+    background: rgb(50, 24, 90);
+    background: linear-gradient(97deg, rgba(50, 24, 90, 1) 10%, rgba(28, 13, 44, 1) 100%);
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px dashed #85899280;
+    margin-bottom: 20px;
+}
+
+.slotStyle h6 {
+    font-size: 16px;
+}
+
+.slotStyle p {
+    font-size: 12px;
+}
+
+.lineDiv {
+    background-color: rgba(255, 255, 255, 0.384);
+    height: 0.1px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.bgSlider {
+    background-color: #2d1748;
+    border-radius: 20px;
+}
+
+.slide {
+    margin-right: 10px;
+    background-color: rgb(65, 31, 106);
+    color: white;
+}
+
+.submitBtn {
+    background-color: rgb(65, 31, 106) !important;
+    width: 25%;
+}
+
+.hidden {
+    transition: 0.3s ease-in-out;
+}
+
+.cardDiv {
+    overflow: hidden;
+    transition: all ease-in-out 0.2s; 
+    }
+
+/* .cardDiv:hover .hidden {
+    visibility: hidden;
+} */
+
+/* .cardName {
+    position: relative;
+}
+
+.dragged {
+    text-decoration: line-through;
+    color: red;
+}
+
+.draggedText {
+    color: red;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+.draggedCard {
+    border: 1px solid red;
+} */
+
+
+.allHome {
+    font-family: "Mulish", sans-serif;
+    background-color: #211036;
+}
+
+.firstSection {
+    background-color: #211036;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-family: "Inter", sans-serif;
+}
+
+.slotsDiv {
+    background-color: #211036;
+    color: white;
+    padding: 30px;
+}
+
+.slotStyle {
+    background: rgb(50, 24, 90);
+    background: linear-gradient(97deg, rgba(50, 24, 90, 1) 10%, rgba(28, 13, 44, 1) 100%);
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px dashed #85899280;
+    margin-bottom: 20px;
+}
+
+.slotStyle h6 {
+    font-size: 16px;
+}
+
+.slotStyle p {
+    font-size: 12px;
+}
+
+.lineDiv {
+    background-color: rgba(255, 255, 255, 0.384);
+    height: 0.1px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.bgSlider {
+    background-color: #2d1748;
+    border-radius: 20px;
+}
+
+.slide {
+    margin-right: 10px;
+    background-color: rgb(65, 31, 106);
+    color: white;
+    height: 50px;
+    transition: all ease-in-out 0.5s;
+}
+
+.submitBtn {
+    background-color: rgb(65, 31, 106) !important;
+    width: 25%;
+}
+
+.hidden {
+    transition: 0.3s ease-in-out;
+}
+
+.cardDiv {
+    overflow: hidden;
+    transition: all ease-in-out 0.3s;
 }
 
 .cardName {
     position: relative;
-  }
-  
-  .dragged {
+}
+
+.dragged {
     text-decoration: line-through;
     color: red;
-  }
-  
-  .draggedText {
+}
+
+.draggedText {
     color: red;
-    margin-top: 5px;
     font-size: 0.8rem;
-  }
-  
-  .draggedCard {
-    border: 1px solid red;
-  }
-  
+}
+
+.changeInHover {
+    /* display: none; */
+    transition: all ease-in-out 0.3s;
+    transform: translateY(-200%);
+
+}
+
+.cardDiv:hover .changeInHover {
+    /* display: block; */
+    transform: translateY(-20%);
+    transition: all ease-in-out 0.3s;
+
+}
+
+.cardDiv:hover .slide {
+    height: 150px;
+
+}

@@ -16,7 +16,7 @@ function DraggableCard({ id, children, originalSlot, dragged }) {
   }));
 
   return (
-    <div ref={drag} className={`${style.slide} ${dragged ? style.draggedCard : ''} p-5 rounded-2 text-center`} style={{ opacity: isDragging ? 0.5 : 1 }}>
+    <div ref={drag} className={`${style.slide} ${dragged ? style.draggedCard : ''} p-2 rounded-2 text-center`} style={{ opacity: isDragging ? 0.5 : 1 }}>
       {children}
     </div>
   );
