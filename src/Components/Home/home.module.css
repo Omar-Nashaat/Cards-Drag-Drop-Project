@@ -257,7 +257,7 @@
     margin-right: 10px;
     background-color: rgb(65, 31, 106);
     color: white;
-    height: 50px;
+    height: 70px;
     transition: all ease-in-out 0.5s;
 }
 
@@ -304,6 +304,6 @@
 }
 
 .cardDiv:hover .slide {
-    height: 150px;
+    height: 170px;
 
 }

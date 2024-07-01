@@ -6,6 +6,7 @@ import NotFound from './Components/NotFound/NotFound'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import style from './App.module.css'
+import Second from './Components/Second/Second'
 
 
 
@@ -14,6 +15,7 @@ const routes = createBrowserRouter([
         path: '', element: <Layout />, children: [
             { path: '', element: <Home /> },
             { path: 'home', element: <Home /> },
+            { path: 'second', element: <Second /> },
             { path: '*', element: <NotFound /> },
         ]
     }

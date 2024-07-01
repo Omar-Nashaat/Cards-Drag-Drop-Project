@@ -6,8 +6,12 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import DraggableCard from '../DraggableCard/DraggableCard';
 import DroppableSlot from '../DroppableSlot/DroppableSlot';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+
+  let nav = useNavigate();
+
   const settings = {
     speed: 500,
     slidesToShow: 4,
@@ -153,15 +157,28 @@ export default function Home() {
   };
 
   const handleSubmit = () => {
+    const alwaysValuedCount = slots.alwaysValued.length;
+    const neverValuedCount = slots.neverValued.length;
+
+    if (alwaysValuedCount < 10 || neverValuedCount < 10) {
+      toast.error('Always valued and the Never valued must have at least 10 cards');
+      return;
+    }
+
     const output = {
-      'ALWAYS VALUED': slots.alwaysValued.map(card => card.name).join(', '),
-      'SOMETIMES VALUED': slots.sometimesValued.map(card => card.name).join(', '),
-      'OFTEN VALUED': slots.oftenValued.map(card => card.name).join(', '),
-      'RARELY VALUED': slots.rarelyValued.map(card => card.name).join(', '),
-      'NEVER VALUED': slots.neverValued.map(card => card.name).join(', '),
+      'ALWAYS VALUED': slots.alwaysValued.map((card) => card.name).join(', '),
+      'SOMETIMES VALUED': slots.sometimesValued.map((card) => card.name).join(', '),
+      'OFTEN VALUED': slots.oftenValued.map((card) => card.name).join(', '),
+      'RARELY VALUED': slots.rarelyValued.map((card) => card.name).join(', '),
+      'NEVER VALUED': slots.neverValued.map((card) => card.name).join(', '),
     };
+
     console.log(output);
     toast.success('Submitted successfully!');
+    localStorage.setItem('firstPage', JSON.stringify(output));
+    setTimeout(() => {
+      nav('/second');
+    }, 1500);
   };
 
   return (
